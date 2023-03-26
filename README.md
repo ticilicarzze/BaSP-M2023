@@ -6,7 +6,7 @@ Radium Rocket is a software professional services company that builds engineerin
 
 - Learn about Agile SCRUM Methodology
 - Design a screenflow of an app using [Figma] 
-- 
+  
 ## Week 02
 - Create repository in [GitHub]:
 ```

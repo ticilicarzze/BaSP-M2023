@@ -23,6 +23,20 @@ Repository name: "BaSP-M2023"
 README.md
 ```
 
+## Week 03
+- Learn the first steps of CSS
+- Style the landing page by using CSS
+  - The landing page was style by using Pixel Perfect, this means, it is not responsive and was made without Flexbox or CSS GRID.
+- In order to make it, I mostly used the following properties: 
+  ```
+  position: relative
+  position: absolute
+  position: fixed
+  display: inline-block
+  ```
+- Correct some mistakes made the past week on HTML
+- Add some content on the HTML for compatibility
+- Give and recibe help with some difficulties implementing the CSS
 ## Author
 - Ticiano Licarzze
 

@@ -1,0 +1,181 @@
+main {
+    padding-top: 100px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Mega Rocket Section */
+
+.mega-rocket h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2F3058;
+}
+
+.mega-rocket img {
+    width: 320px;
+}
+
+.container-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mega-rocket p {
+    font-size: 14px;
+    text-indent: 10px;
+}
+
+.mega-rocket p:nth-child(4) {
+    text-indent: 0;
+}
+
+/* Meet us Section */
+
+.meet-us {
+    display: flex;
+    flex-direction: column;
+}
+
+.meet-us-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    width: 300px;
+}
+
+.meet-us-box img {
+    width: 90px;
+}
+
+.meet-us-box h3 {
+    padding-left: 10px;
+}
+
+.meet-us-box p {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #979797;
+}
+
+/* Contact us Section */
+
+form label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #373867;
+}
+
+.label-checkbox {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.last-checkbox {
+    margin-bottom: 10px;
+}
+
+form textarea {
+    width: 96%;
+    height: 100px;
+    font-size: 12px;
+    padding: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #373867;
+    border-radius: 5px;
+}
+
+form input[type=text] {
+    margin-bottom: 15px;
+    padding: 5px;
+    width: 97%;
+    font-size: 12px;
+    border: 1px solid #373867;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button:first-child {
+    width: 140px;
+    height: 40px;
+    background-color: #373867;
+    border: 1px solid #373867;
+    border-radius: 7px;
+    color: #f2f2f2;
+}
+
+.buttons button:last-child {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #373867;
+    border-radius: 7px;
+    color: #373867;
+}
+
+/* About us Section */
+
+.about-us-section p {
+    color: #6D6D6D;
+}
+
+.about-us-container p {
+    margin-bottom: 10px;
+}
+
+.p1-our-thoughts {
+    max-width: 180px;
+}
+
+.our-thoughts-container img {
+    min-width: 115px;
+    height: 115px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.our-thoughts-container {
+    display: flex;
+}
+
+.p2-our-thoughts {
+    margin-bottom: 10px;
+}
+
+.family-container {
+    display: flex;
+}
+
+.family-container img {
+    min-width: 115px;
+    height: 115px;
+    margin-left: 10px;
+}
+
+/* GYM Section */
+
+.gym-boxes {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #46A37C;
+    border-radius: 10px;
+}
+
+.gym-boxes ol li {
+    margin-bottom: 5px;
+    margin-left: 20px;
+    color: #373867;
+    font-size: 13px;
+    font-weight: bold;
+}

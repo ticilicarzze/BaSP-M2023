@@ -1,0 +1,23 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #2C2C3A;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+footer p {
+    color: #46A37C;
+    font-size: 11px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.footer-container a img {
+    margin-bottom: 10px;
+}

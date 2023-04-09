@@ -6,16 +6,12 @@ main {
 
 /* Mega Rocket Section */
 
-.mega-rocket h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 32px;
-    font-weight: bold;
-    color: #2F3058;
+.mega-rocket img {
+    width: 100%
 }
 
-.mega-rocket img {
-    width: 320px;
+.mega-rocket img:last-child {
+    display: none;
 }
 
 .container-img {
@@ -27,10 +23,16 @@ main {
 .mega-rocket p {
     font-size: 14px;
     text-indent: 10px;
+    color: #444;
 }
 
 .mega-rocket p:nth-child(4) {
     text-indent: 0;
+}
+
+.mega-rocket strong {
+    color: hsla(239, 30%, 26%, 0.76);
+    font-weight: bold;
 }
 
 /* Meet us Section */
@@ -42,10 +44,8 @@ main {
 
 .meet-us-box {
     display: flex;
-    justify-content: center;
     align-items: center;
     padding-bottom: 30px;
-    width: 300px;
 }
 
 .meet-us-box img {
@@ -60,6 +60,7 @@ main {
     padding-left: 10px;
     font-size: 14px;
     color: #979797;
+    width: 200px;
 }
 
 /* Contact us Section */
@@ -76,6 +77,7 @@ form label {
     display: inline-block;
     margin-bottom: 5px;
     font-size: 13px;
+    font-weight: 500;
 }
 
 .last-checkbox {
@@ -112,6 +114,7 @@ form input[type=text] {
     background-color: #373867;
     border: 1px solid #373867;
     border-radius: 7px;
+    font-weight: bold;
     color: #f2f2f2;
 }
 
@@ -120,6 +123,7 @@ form input[type=text] {
     height: 40px;
     border: 1px solid #373867;
     border-radius: 7px;
+    font-weight: bold;
     color: #373867;
 }
 
@@ -127,6 +131,12 @@ form input[type=text] {
 
 .about-us-section p {
     color: #6D6D6D;
+    font-size: 14px;
+}
+
+.about-us-section strong {
+    color: #7B7B7B;
+    font-weight: bold;
 }
 
 .about-us-container p {
@@ -178,4 +188,121 @@ form input[type=text] {
     color: #373867;
     font-size: 13px;
     font-weight: bold;
+}
+
+@media screen and (min-width: 601px) {
+
+    main {
+        width: 75%;
+    }
+
+    .mega-rocket h2 {
+        font-size: 24px;
+        width: 330px;
+    }
+
+    .mega-rocket p {
+        font-size: 16px;
+    }
+
+    .mega-rocket img:first-child {
+        display: none;
+    }
+
+    .mega-rocket img:last-child {
+        display: inline;
+    }
+
+    .meet-us-box img {
+        width: 140px;
+        margin-right: 10px;
+    }
+
+    .meet-us-box p {
+        font-size: 16px;
+        width: 330px;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    form input[type=text] {
+        padding: 8px;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .label-checkbox {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: right;
+    }
+
+    .buttons button:first-child {
+        margin-right: 20px;
+    }
+
+    form textarea {
+        height: 200px;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .about-us-section h3 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .about-us-section p {
+        font-size: 20px;
+    }
+
+    .about-us-container p {
+        margin-bottom: 40px;
+    }
+
+    .p1-our-thoughts {
+        max-width: 400px;
+        margin-left: 20px;
+    }
+
+    .p2-our-thoughts {
+        margin-top: 20px;
+    }
+
+    .our-thoughts-container img {
+        min-width: 250px;
+        height: 115px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+    }
+
+    .family-container img {
+        min-width: 250px;
+        height: 115px;
+        margin-left: 10px;
+    }
+
+    .gym-boxes {
+        margin-bottom: 50px;
+        padding: 20px;
+    }
+
+    .gym-boxes h3 {
+        margin-left: 20px;
+    }
+
+    .gym-boxes ol li {
+        margin-bottom: 5px;
+        margin-left: 40px;
+        font-size: 16px;
+    }
 }

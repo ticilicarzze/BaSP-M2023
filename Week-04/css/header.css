@@ -18,3 +18,13 @@ header img:first-child {
     margin-left: 10px;
     align-self: start;
 }
+
+@media screen and (min-width: 601px) {
+    header {
+        justify-content: start;
+    }
+
+    header img:last-child {
+        margin-left: 30px;
+    }
+}

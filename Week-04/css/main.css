@@ -1,38 +1,27 @@
 main {
     padding-top: 100px;
     width: 80%;
-    margin: 0 auto;
+    margin: auto;
 }
 
 /* Mega Rocket Section */
 
-.mega-rocket img {
-    width: 100%
-}
-
-.mega-rocket img:last-child {
-    display: none;
-}
-
-.container-img {
-    display: flex;
-    justify-content: center;
+.container-img>img {
+    width: 100%;
+    height: 350px;
     margin-bottom: 20px;
+    object-fit: none;
 }
 
 .mega-rocket p {
-    font-size: 14px;
+    font-size: 0.9rem;
     text-indent: 10px;
     color: #444;
 }
 
-.mega-rocket p:nth-child(4) {
-    text-indent: 0;
-}
-
 .mega-rocket strong {
-    color: hsla(239, 30%, 26%, 0.76);
     font-weight: bold;
+    color: hsla(239, 30%, 26%, 0.76);
 }
 
 /* Meet us Section */
@@ -58,7 +47,7 @@ main {
 
 .meet-us-box p {
     padding-left: 10px;
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #979797;
     width: 200px;
 }
@@ -68,7 +57,7 @@ main {
 form label {
     display: block;
     margin-bottom: 3px;
-    font-size: 14px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #373867;
 }
@@ -76,7 +65,7 @@ form label {
 .label-checkbox {
     display: inline-block;
     margin-bottom: 5px;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
@@ -87,7 +76,7 @@ form label {
 form textarea {
     width: 96%;
     height: 100px;
-    font-size: 12px;
+    font-size: 0.7rem;
     padding: 5px;
     margin-bottom: 15px;
     border: 1px solid #373867;
@@ -98,7 +87,7 @@ form input[type=text] {
     margin-bottom: 15px;
     padding: 5px;
     width: 97%;
-    font-size: 12px;
+    font-size: 0.7rem;
     border: 1px solid #373867;
     border-radius: 5px;
 }
@@ -131,7 +120,7 @@ form input[type=text] {
 
 .about-us-section p {
     color: #6D6D6D;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .about-us-section strong {
@@ -148,8 +137,9 @@ form input[type=text] {
 }
 
 .our-thoughts-container img {
-    min-width: 115px;
-    height: 115px;
+    object-fit: cover;
+    width: 100px;
+    height: 90px;
     margin-bottom: 5px;
     margin-right: 10px;
 }
@@ -167,8 +157,9 @@ form input[type=text] {
 }
 
 .family-container img {
-    min-width: 115px;
-    height: 115px;
+    object-fit: cover;
+    width: 100px;
+    height: 90px;
     margin-left: 10px;
 }
 
@@ -186,31 +177,23 @@ form input[type=text] {
     margin-bottom: 5px;
     margin-left: 20px;
     color: #373867;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
 @media screen and (min-width: 601px) {
 
     main {
-        width: 75%;
+        width: 70%;
     }
 
     .mega-rocket h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
         width: 330px;
     }
 
     .mega-rocket p {
-        font-size: 16px;
-    }
-
-    .mega-rocket img:first-child {
-        display: none;
-    }
-
-    .mega-rocket img:last-child {
-        display: inline;
+        font-size: 1rem;
     }
 
     .meet-us-box img {
@@ -219,25 +202,25 @@ form input[type=text] {
     }
 
     .meet-us-box p {
-        font-size: 16px;
+        font-size: 1rem;
         width: 330px;
     }
 
     form label {
         display: block;
         margin-bottom: 10px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     form input[type=text] {
         padding: 8px;
-        font-size: 14px;
+        font-size: 0.9rem;
         margin-bottom: 25px;
     }
 
     .label-checkbox {
         margin-bottom: 5px;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
     }
 
@@ -252,7 +235,7 @@ form input[type=text] {
 
     form textarea {
         height: 200px;
-        font-size: 14px;
+        font-size: 0.9rem;
         padding: 10px;
     }
 
@@ -262,7 +245,7 @@ form input[type=text] {
     }
 
     .about-us-section p {
-        font-size: 20px;
+        font-size: 1.2rem;
     }
 
     .about-us-container p {
@@ -280,14 +263,14 @@ form input[type=text] {
 
     .our-thoughts-container img {
         min-width: 250px;
-        height: 115px;
+        height: auto;
         margin-bottom: 5px;
         margin-right: 10px;
     }
 
     .family-container img {
         min-width: 250px;
-        height: 115px;
+        height: auto;
         margin-left: 10px;
     }
 
@@ -303,6 +286,8 @@ form input[type=text] {
     .gym-boxes ol li {
         margin-bottom: 5px;
         margin-left: 40px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 }
+
+@media screen and (min-width: 1024px) {}

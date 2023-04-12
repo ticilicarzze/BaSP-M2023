@@ -1,16 +1,16 @@
 footer {
     display: flex;
     flex-direction: column;
-    background-color: #2C2C3A;
     align-items: center;
-    padding: 20px 0;
-    margin-top: 60px;
     width: 100%;
+    padding: 20px 0;
+    background-color: #2C2C3A;
+    z-index: 20;
 }
 
 footer p {
-    color: #46A37C;
     font-size: 0.7rem;
+    color: #46A37C;
 }
 
 .footer-container {
@@ -21,4 +21,16 @@ footer p {
 
 .footer-container a img {
     margin-bottom: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 1024) {
+    footer p {
+        font-size: 1rem;
+    }
 }

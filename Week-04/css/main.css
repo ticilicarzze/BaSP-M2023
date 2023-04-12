@@ -1,10 +1,8 @@
 main {
-    padding-top: 100px;
     width: 80%;
     margin: auto;
+    padding-top: 100px;
 }
-
-/* Mega Rocket Section */
 
 .container-img>img {
     width: 100%;
@@ -24,8 +22,6 @@ main {
     color: hsla(239, 30%, 26%, 0.76);
 }
 
-/* Meet us Section */
-
 .meet-us {
     display: flex;
     flex-direction: column;
@@ -34,7 +30,7 @@ main {
 .meet-us-box {
     display: flex;
     align-items: center;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .meet-us-box img {
@@ -46,16 +42,13 @@ main {
 }
 
 .meet-us-box p {
+    width: 200px;
     padding-left: 10px;
     font-size: 0.9rem;
     color: #979797;
-    width: 200px;
 }
 
-/* Contact us Section */
-
 form label {
-    display: block;
     margin-bottom: 3px;
     font-size: 0.9rem;
     font-weight: 600;
@@ -76,20 +69,20 @@ form label {
 form textarea {
     width: 96%;
     height: 100px;
-    font-size: 0.7rem;
-    padding: 5px;
     margin-bottom: 15px;
+    padding: 5px;
     border: 1px solid #373867;
     border-radius: 5px;
+    font-size: 0.7rem;
 }
 
 form input[type=text] {
+    width: 97%;
     margin-bottom: 15px;
     padding: 5px;
-    width: 97%;
-    font-size: 0.7rem;
     border: 1px solid #373867;
     border-radius: 5px;
+    font-size: 0.7rem;
 }
 
 .buttons {
@@ -116,8 +109,6 @@ form input[type=text] {
     color: #373867;
 }
 
-/* About us Section */
-
 .about-us-section p {
     color: #6D6D6D;
     font-size: 0.9rem;
@@ -137,11 +128,11 @@ form input[type=text] {
 }
 
 .our-thoughts-container img {
-    object-fit: cover;
     width: 100px;
     height: 90px;
-    margin-bottom: 5px;
     margin-right: 10px;
+    margin-bottom: 5px;
+    object-fit: cover;
 }
 
 .our-thoughts-container {
@@ -157,13 +148,11 @@ form input[type=text] {
 }
 
 .family-container img {
-    object-fit: cover;
     width: 100px;
     height: 90px;
     margin-left: 10px;
+    object-fit: cover;
 }
-
-/* GYM Section */
 
 .gym-boxes {
     width: 100%;
@@ -176,20 +165,20 @@ form input[type=text] {
 .gym-boxes ol li {
     margin-bottom: 5px;
     margin-left: 20px;
-    color: #373867;
     font-size: 0.8rem;
     font-weight: bold;
+    color: #373867;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 600px) {
 
     main {
         width: 70%;
     }
 
     .mega-rocket h2 {
-        font-size: 1.5rem;
         width: 330px;
+        font-size: 1.5rem;
     }
 
     .mega-rocket p {
@@ -202,8 +191,8 @@ form input[type=text] {
     }
 
     .meet-us-box p {
-        font-size: 1rem;
         width: 330px;
+        font-size: 1rem;
     }
 
     form label {
@@ -213,9 +202,9 @@ form input[type=text] {
     }
 
     form input[type=text] {
+        margin-bottom: 25px;
         padding: 8px;
         font-size: 0.9rem;
-        margin-bottom: 25px;
     }
 
     .label-checkbox {
@@ -235,8 +224,8 @@ form input[type=text] {
 
     form textarea {
         height: 200px;
-        font-size: 0.9rem;
         padding: 10px;
+        font-size: 0.9rem;
     }
 
     .about-us-section h3 {
@@ -262,19 +251,20 @@ form input[type=text] {
     }
 
     .our-thoughts-container img {
-        min-width: 250px;
         height: auto;
+        min-width: 250px;
         margin-bottom: 5px;
         margin-right: 10px;
     }
 
     .family-container img {
-        min-width: 250px;
         height: auto;
+        min-width: 250px;
         margin-left: 10px;
     }
 
     .gym-boxes {
+        width: 90%;
         margin-bottom: 50px;
         padding: 20px;
     }
@@ -290,4 +280,124 @@ form input[type=text] {
     }
 }
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+
+    main {
+        flex-grow: 1;
+        margin-left: 250px;
+        padding-top: 150px;
+    }
+
+    .main-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .container-img-p {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .mega-rocket h2 {
+        width: auto;
+        margin-right: 10px;
+        font-size: 1.5rem;
+    }
+
+    .mega-rocket p {
+        width: 400px;
+        margin-right: 10px;
+        font-size: 1.1rem;
+    }
+
+    .meet-us-box {
+        width: 40%;
+        margin-bottom: 100px;
+    }
+
+    .meet-us-box img {
+        width: 30%;
+    }
+
+    .meet-us-box p {
+        width: 200px;
+        padding-left: 10px;
+        font-size: 1.1rem;
+        color: #979797;
+    }
+
+    .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .form-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .form-box {
+        flex-basis: 40%;
+        margin-right: 50px;
+    }
+
+    form input[type=text] {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    form textarea {
+        font-size: 1rem;
+    }
+
+    form label {
+        font-size: 1.5rem;
+    }
+
+    .about-us-section p {
+        font-size: 1.5rem;
+    }
+
+    .p1-our-thoughts {
+        max-width: 850px;
+    }
+
+    .p2-our-thoughts {
+        max-width: 1300px;
+    }
+
+    .our-thoughts-container img {
+        width: auto;
+        height: 200px;
+    }
+
+    .family-container img {
+        width: auto;
+        height: 200px;
+    }
+
+    .family-container p {
+        max-width: 850px;
+    }
+
+    .gym-boxes {
+        width: 40%;
+        min-height: 150px;
+        margin-bottom: 100px;
+        padding: 10px;
+        border: 2px solid #46A37C;
+        border-radius: 10px;
+    }
+
+    .gym-boxes h3 {
+        font-size: 2rem;
+    }
+
+    .gym-boxes ol li {
+        font-size: 1.2rem;
+    }
+}

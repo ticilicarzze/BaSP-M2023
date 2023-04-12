@@ -19,9 +19,9 @@ Repository name: "BaSP-M2023"
   - Aside: has contact information and a navbar
   - Footer: includes social media links and copyright
 - Create README file:
-```
-README.md
-```
+  ```
+  README.md
+  ```
 
 ## Week 03
 - Learn the first steps of CSS
@@ -37,6 +37,26 @@ README.md
 - Correct some mistakes made the past week on HTML
 - Add some content on the HTML for compatibility
 - Give and recibe help with some difficulties implementing the CSS
+
+## Week 04
+- Learn Responsive Design
+- Learn Flexbox
+- Learn Media Queries
+- Create the landing page using responsive design for:
+  - Mobile version
+  - Tablet version
+  - Desktop version
+- Upload it to [GitHub-Page]
+   ```
+  https://ticilicarzze.github.io/BaSP-M2023/ 
+  (Use this to enter the README file)
+  ```
+  ```
+  https://ticilicarzze.github.io/BaSP-M2023/Week-04/ 
+  (Use this to enter Week-04 project)
+  ```
+
+
 ## Author
 - Ticiano Licarzze
 
@@ -46,3 +66,4 @@ README.md
 [GitHub]: <https://github.com/>
 [Figma]: <https://www.figma.com/>
 [Git]: <https://git-scm.com/>
+[GitHub-Page]: <https://ticilicarzze.github.io/BaSP-M2023/Week-04/>

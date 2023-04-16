@@ -1,0 +1,1 @@
+console.log('--Exercise 6: FUNCTIONS');

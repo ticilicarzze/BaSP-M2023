@@ -13,14 +13,14 @@ footer p {
     color: #46A37C;
 }
 
+.footer-container a img {
+    margin-bottom: 10px;
+}
+
 .footer-container {
     display: flex;
     justify-content: space-between;
     width: 170px;
-}
-
-.footer-container a img {
-    margin-bottom: 10px;
 }
 
 @media screen and (min-width: 600px) {

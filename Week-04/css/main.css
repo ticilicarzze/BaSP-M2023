@@ -27,12 +27,6 @@ main {
     flex-direction: column;
 }
 
-.meet-us-box {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
 .meet-us-box img {
     width: 90px;
 }
@@ -48,22 +42,17 @@ main {
     color: #979797;
 }
 
+.meet-us-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 form label {
     margin-bottom: 3px;
     font-size: 0.9rem;
     font-weight: 600;
     color: #373867;
-}
-
-.label-checkbox {
-    display: inline-block;
-    margin-bottom: 5px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.last-checkbox {
-    margin-bottom: 10px;
 }
 
 form textarea {
@@ -85,9 +74,15 @@ form input[type=text] {
     font-size: 0.7rem;
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
+.last-checkbox {
+    margin-bottom: 10px;
+}
+
+.label-checkbox {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .buttons button:first-child {
@@ -108,6 +103,12 @@ form input[type=text] {
     font-weight: bold;
     color: #373867;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .about-us-section p {
     color: #6D6D6D;
@@ -143,10 +144,6 @@ form input[type=text] {
     margin-bottom: 10px;
 }
 
-.family-container {
-    display: flex;
-}
-
 .family-container img {
     width: 100px;
     height: 90px;
@@ -154,12 +151,8 @@ form input[type=text] {
     object-fit: cover;
 }
 
-.gym-boxes {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid #46A37C;
-    border-radius: 10px;
+.family-container {
+    display: flex;
 }
 
 .gym-boxes ol li {
@@ -168,6 +161,14 @@ form input[type=text] {
     font-size: 0.8rem;
     font-weight: bold;
     color: #373867;
+}
+
+.gym-boxes {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #46A37C;
+    border-radius: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -214,7 +215,6 @@ form input[type=text] {
     }
 
     .buttons {
-        display: flex;
         justify-content: right;
     }
 
@@ -263,12 +263,6 @@ form input[type=text] {
         margin-left: 10px;
     }
 
-    .gym-boxes {
-        width: 90%;
-        margin-bottom: 50px;
-        padding: 20px;
-    }
-
     .gym-boxes h3 {
         margin-left: 20px;
     }
@@ -277,6 +271,12 @@ form input[type=text] {
         margin-bottom: 5px;
         margin-left: 40px;
         font-size: 1rem;
+    }
+
+    .gym-boxes {
+        width: 90%;
+        margin-bottom: 50px;
+        padding: 20px;
     }
 }
 
@@ -311,11 +311,6 @@ form input[type=text] {
         font-size: 1.1rem;
     }
 
-    .meet-us-box {
-        width: 40%;
-        margin-bottom: 100px;
-    }
-
     .meet-us-box img {
         width: 30%;
     }
@@ -325,6 +320,11 @@ form input[type=text] {
         padding-left: 10px;
         font-size: 1.1rem;
         color: #979797;
+    }
+
+    .meet-us-box {
+        width: 40%;
+        margin-bottom: 100px;
     }
 
     .box-container {
@@ -340,11 +340,6 @@ form input[type=text] {
         flex-wrap: wrap;
     }
 
-    .form-box {
-        flex-basis: 40%;
-        margin-right: 50px;
-    }
-
     form input[type=text] {
         width: 100%;
         font-size: 1rem;
@@ -356,6 +351,11 @@ form input[type=text] {
 
     form label {
         font-size: 1.5rem;
+    }
+
+    .form-box {
+        flex-basis: 40%;
+        margin-right: 50px;
     }
 
     .about-us-section p {
@@ -384,6 +384,14 @@ form input[type=text] {
         max-width: 850px;
     }
 
+    .gym-boxes h3 {
+        font-size: 2rem;
+    }
+
+    .gym-boxes ol li {
+        font-size: 1.2rem;
+    }
+
     .gym-boxes {
         width: 40%;
         min-height: 150px;
@@ -391,13 +399,5 @@ form input[type=text] {
         padding: 10px;
         border: 2px solid #46A37C;
         border-radius: 10px;
-    }
-
-    .gym-boxes h3 {
-        font-size: 2rem;
-    }
-
-    .gym-boxes ol li {
-        font-size: 1.2rem;
     }
 }

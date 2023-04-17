@@ -15,11 +15,17 @@ console.log(months[10]);
 
 console.log('--Exercise 3.b:');
 
+var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
+ "Octubre", "Noviembre", "Diciembre"];
+
 console.log(months.sort());
 
 // c. Agregar un elemento al principio y al final del array (utilizar unshift y push).
 
 console.log('--Exercise 3.c:');
+
+var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
+ "Octubre", "Noviembre", "Diciembre"];
 
 months.unshift("beginning");
 months.push("end");

@@ -21,8 +21,8 @@ console.log(months.sort());
 
 console.log('--Exercise 3.c:');
 
-months.unshift("principio");
-months.push("final");
+months.unshift("beginning");
+months.push("end");
 console.log(months);
 
 // d. Quitar un elemento del principio y del final del array (utilizar shift y pop).

@@ -14,8 +14,8 @@ console.log(num3);
 
 console.log('--Exercise 1.b:');
 
-var str1 = 'hola';
-var str2 = ' mundo';
+var str1 = 'hello';
+var str2 = ' world';
 var str3 = str1 + str2;
 console.log(str3);
 
@@ -24,7 +24,7 @@ guardando el resultado de la suma en una 3er variable (utilizar length). */
 
 console.log('--Exercise 1.c:');
 
-var str1 = '1111';
-var str2 = 'aaaaa';
-var str3 = str1.length + str2.length;
-console.log(str3);
+var str4 = '1111';
+var str5 = 'aaaaa';
+var str6 = str4.length + str5.length;
+console.log(str6);

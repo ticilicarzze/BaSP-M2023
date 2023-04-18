@@ -13,8 +13,7 @@ console.log(result);
 
 /* b. Copiar la función suma anterior y agregarle una validación para controlar si alguno de los parámetros 
 no es un número; de no ser un número, mostrar un alert aclarando que uno de los parámetros tiene error y 
-retornar el valor NaN como resultado.
-console.log("exercise b")*/
+retornar el valor NaN como resultado.*/
 
 console.log('--Exercise 6.b:');
 
@@ -53,7 +52,7 @@ function addValRound(num1, num2) {
         if (val1 == true && val2 == true){
             return num1 + num2;
         }else{
-            console.log("Error: some number is not an integer");
+            alert("Error: some number is not an integer");
             if (val1 == true){
                 return Math.round(num2);
             }else if(val2 == true){
@@ -63,7 +62,7 @@ function addValRound(num1, num2) {
             }
         }
     }else{
-        console.log("Error: incorrect parameters");
+        alert("Error: incorrect parameters");
         return NaN;
     }
 }
@@ -82,7 +81,7 @@ function validateFunc(num1, num2) {
         if (val1 == true && val2 == true){
             return num1 + num2;
         }else{
-            console.log("Error: some number is not an integer");
+            alert("Error: some number is not an integer");
             if (val1 == true){
                 return Math.round(num2);
             }else if(val2 == true){
@@ -92,7 +91,7 @@ function validateFunc(num1, num2) {
             }
         }
     }else{
-        console.log("Error: incorrect parameters");
+        alert("Error: incorrect parameters");
         return NaN;
     }
 }

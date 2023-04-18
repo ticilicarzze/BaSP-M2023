@@ -74,20 +74,17 @@ probando que todo siga funcionando igual que en el apartado anterior.*/
 
 console.log('--Exercise 6.e:');
 
-function validateFunc(num1, num2) {
-    var val1 = num1 % 1 === 0;
-    var val2 = num2 % 1 === 0;
-    if (num1 / 1 === num1 && num2 /1 === num2){
-        if (val1 == true && val2 == true){
-            return num1 + num2;
+function validateFunc(num) {
+    var val = num % 1 === 0;
+    if (num / 1 === num ){
+        if (val == true){
+            return num ;
         }else{
             alert("Error: some number is not an integer");
-            if (val1 == true){
-                return Math.round(num2);
-            }else if(val2 == true){
-                return Math.round(num1);
+            if(val == true){
+                return Math.round(num);
             }else{
-                return Math.round(num1) + ", " + Math.round(num2);
+                return Math.round(num);
             }
         }
     }else{
@@ -96,8 +93,14 @@ function validateFunc(num1, num2) {
     }
 }
 
-function validateAll(num1, num2) {
-    return validateFunc(num1, num2);
+function validateAll(num1, num2, num3) {
+    if (num1 === NaN || num2 === NaN || num3 === NaN){
+        return NaN
+    }else{
+        return validateFunc(num1) + validateFunc(num2) + validateFunc(num3);
+    }
 }
 
-console.log(validateAll(4.6, 15));
+console.log(validateAll(4.6, 15, 13));
+console.log(validateAll("s", 15, "13"));
+console.log(validateAll(2, 2, 2));

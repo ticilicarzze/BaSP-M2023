@@ -3,7 +3,6 @@
 Radium Rocket is a software professional services company that builds engineering teams who develop leading mobile and web products.
 
 ## Week 01
-
 - Learn about Agile SCRUM Methodology
 - Design a screenflow of an app using [Figma] 
   
@@ -56,6 +55,16 @@ Repository name: "BaSP-M2023"
   (Use this to enter Week-04 project)
   ```
 
+## Week 05
+- Learn the basics of JavaScript
+  - Variables and operations
+  - Strings
+  - Arrays
+  - If-else
+  - For
+  - Functions
+- Solve the problems raised
+- Correct mistakes made in the CSS code last week
 
 ## Author
 - Ticiano Licarzze

@@ -1,0 +1,403 @@
+main {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.container-img>img {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 20px;
+    object-fit: none;
+}
+
+.mega-rocket p {
+    font-size: 0.9rem;
+    text-indent: 10px;
+    color: #444;
+}
+
+.mega-rocket strong {
+    font-weight: bold;
+    color: hsla(239, 30%, 26%, 0.76);
+}
+
+.meet-us {
+    display: flex;
+    flex-direction: column;
+}
+
+.meet-us-box img {
+    width: 90px;
+}
+
+.meet-us-box h3 {
+    padding-left: 10px;
+}
+
+.meet-us-box p {
+    width: 200px;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    color: #979797;
+}
+
+.meet-us-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+form label {
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #373867;
+}
+
+form textarea {
+    width: 96%;
+    height: 100px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    font-size: 0.7rem;
+}
+
+form input[type=text] {
+    width: 97%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    font-size: 0.7rem;
+}
+
+.last-checkbox {
+    margin-bottom: 10px;
+}
+
+.label-checkbox {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.buttons button:first-child {
+    width: 140px;
+    height: 40px;
+    background-color: #373867;
+    border: 1px solid #373867;
+    border-radius: 7px;
+    font-weight: bold;
+    color: #f2f2f2;
+}
+
+.buttons button:last-child {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #373867;
+    border-radius: 7px;
+    font-weight: bold;
+    color: #373867;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.about-us-section p {
+    color: #6D6D6D;
+    font-size: 0.9rem;
+}
+
+.about-us-section strong {
+    color: #7B7B7B;
+    font-weight: bold;
+}
+
+.about-us-container p {
+    margin-bottom: 10px;
+}
+
+.p1-our-thoughts {
+    max-width: 180px;
+}
+
+.our-thoughts-container img {
+    width: 100px;
+    height: 90px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+.our-thoughts-container {
+    display: flex;
+}
+
+.p2-our-thoughts {
+    margin-bottom: 10px;
+}
+
+.family-container img {
+    width: 100px;
+    height: 90px;
+    margin-left: 10px;
+    object-fit: cover;
+}
+
+.family-container {
+    display: flex;
+}
+
+.gym-boxes ol li {
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #373867;
+}
+
+.gym-boxes {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #46A37C;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 600px) {
+
+    main {
+        width: 70%;
+    }
+
+    .mega-rocket h2 {
+        width: 330px;
+        font-size: 1.5rem;
+    }
+
+    .mega-rocket p {
+        font-size: 1rem;
+    }
+
+    .meet-us-box img {
+        width: 140px;
+        margin-right: 10px;
+    }
+
+    .meet-us-box p {
+        width: 330px;
+        font-size: 1rem;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    form input[type=text] {
+        margin-bottom: 25px;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .label-checkbox {
+        margin-bottom: 5px;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .buttons {
+        justify-content: right;
+    }
+
+    .buttons button:first-child {
+        margin-right: 20px;
+    }
+
+    form textarea {
+        height: 200px;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .about-us-section h3 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .about-us-section p {
+        font-size: 1.2rem;
+    }
+
+    .about-us-container p {
+        margin-bottom: 40px;
+    }
+
+    .p1-our-thoughts {
+        max-width: 400px;
+        margin-left: 20px;
+    }
+
+    .p2-our-thoughts {
+        margin-top: 20px;
+    }
+
+    .our-thoughts-container img {
+        height: auto;
+        min-width: 250px;
+        margin-bottom: 5px;
+        margin-right: 10px;
+    }
+
+    .family-container img {
+        height: auto;
+        min-width: 250px;
+        margin-left: 10px;
+    }
+
+    .gym-boxes h3 {
+        margin-left: 20px;
+    }
+
+    .gym-boxes ol li {
+        margin-bottom: 5px;
+        margin-left: 40px;
+        font-size: 1rem;
+    }
+
+    .gym-boxes {
+        width: 90%;
+        margin-bottom: 50px;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    main {
+        flex-grow: 1;
+        margin-left: 250px;
+        padding-top: 150px;
+    }
+
+    .main-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .container-img-p {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .mega-rocket h2 {
+        width: auto;
+        margin-right: 10px;
+        font-size: 1.5rem;
+    }
+
+    .mega-rocket p {
+        width: 400px;
+        margin-right: 10px;
+        font-size: 1.1rem;
+    }
+
+    .meet-us-box img {
+        width: 30%;
+    }
+
+    .meet-us-box p {
+        width: 200px;
+        padding-left: 10px;
+        font-size: 1.1rem;
+        color: #979797;
+    }
+
+    .meet-us-box {
+        width: 40%;
+        margin-bottom: 100px;
+    }
+
+    .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .form-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    form input[type=text] {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    form textarea {
+        font-size: 1rem;
+    }
+
+    form label {
+        font-size: 1.5rem;
+    }
+
+    .form-box {
+        flex-basis: 40%;
+        margin-right: 50px;
+    }
+
+    .about-us-section p {
+        font-size: 1.5rem;
+    }
+
+    .p1-our-thoughts {
+        max-width: 850px;
+    }
+
+    .p2-our-thoughts {
+        max-width: 1300px;
+    }
+
+    .our-thoughts-container img {
+        width: auto;
+        height: 200px;
+    }
+
+    .family-container img {
+        width: auto;
+        height: 200px;
+    }
+
+    .family-container p {
+        max-width: 850px;
+    }
+
+    .gym-boxes h3 {
+        font-size: 2rem;
+    }
+
+    .gym-boxes ol li {
+        font-size: 1.2rem;
+    }
+
+    .gym-boxes {
+        width: 40%;
+        min-height: 150px;
+        margin-bottom: 100px;
+        padding: 10px;
+        border: 2px solid #46A37C;
+        border-radius: 10px;
+    }
+}

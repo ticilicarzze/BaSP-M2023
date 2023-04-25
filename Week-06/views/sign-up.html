@@ -8,11 +8,12 @@
     <link rel="stylesheet" type="text/css" href="../css/sidebar.css" />
     <link rel="stylesheet" type="text/css" href="../css/header.css" />
     <link rel="stylesheet" type="text/css" href="../css/sign-up.css" />
+    <script src="../js/sign-up.js"></script>
     <title>Document</title>
   </head>
   <body>
     <header>
-      <a href="#">
+      <a href="index.html">
         <img src="../../assets/images/icono-menu.png" alt="menu" />
       </a>
       <a href="index.html">
@@ -21,7 +22,7 @@
     </header>
     <aside>
       <nav>
-        <a href="#"> Home </a>
+        <a href="index.html"> Home </a>
         <a href="sign-up.html"> Sign Up </a>
         <a href="login.html"> Login </a>
         <div class="contact-a">
@@ -53,47 +54,58 @@
           <div class="file-container">
             <div class="file-box">
               <label>Name</label>
-              <input type="text" />
+              <input type="text" id="input-name" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Last name</label>
-              <input type="text" />
+              <input type="text" id="input-last-name" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>DNI</label>
-              <input type="text" />
+              <input type="text" id="input-dni" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Birthdate</label>
-              <input type="text" />
+              <input type="date" id="input-birthdate" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Phone</label>
-              <input type="text" />
+              <input type="text" id="input-phone" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Address</label>
-              <input type="text" />
+              <input type="text" id="input-address" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Location</label>
-              <input type="text" />
+              <input type="text" id="input-location" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Postal Code</label>
-              <input type="text" />
+              <input type="text" id="input-postal-code" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Email</label>
-              <input type="text" />
+              <input type="text" id="input-email" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Password</label>
-              <input type="password" />
+              <input type="password" id="input-password" />
+              <p class="error-message-p">Error message</p>
             </div>
             <div class="file-box">
               <label>Repeat Password</label>
-              <input type="password" />
+              <input type="password" id="input-repeat-password" />
+              <p class="error-message-p">Error message</p>
             </div>
           </div>
           <button type="submit" class="sign-up" name="button-validate">

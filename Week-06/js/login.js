@@ -2,17 +2,8 @@ var email = document.getElementById("input-email");
 var password = document.getElementById("input-password");
 var signInValidation = document.querySelector("[name=button-validate]");
 
-function validateEmail(inputText) {
-  var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  if (inputText.value.match(emailExpression)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 password.onblur = function () {
-  if (validateCharCode(password) && lengthPassword(password)) {
+  if (validateMinLength(8, password) && validatePassword(password)) {
     password.nextElementSibling.classList.remove("on");
     password.classList.remove("fail");
     password.classList.add("correct");
@@ -54,25 +45,64 @@ function lengthCero(text) {
   return false;
 }
 
-function lengthPassword(text) {
-  if (text.value.length >= 8) {
+function validateMinLength(min, text) {
+  if (text.value.length >= min) {
     return true;
   }
   return false;
 }
 
-function validateCharCode(text) {
-  for (var i = 0; i < text.length; i++) {
-    var charCode = text.charCodeAt(i);
-    if (
-      !(charCode > 47 && charCode < 58) && // numeric (0-9)
-      !(charCode > 64 && charCode < 91) && // upper alpha (A-Z)
-      !(charCode > 96 && charCode < 123) // lower alpha (a-z)
-    ) {
-      return false; // non-alphanumeric character found
+function validateNumber(text) {
+  var numbers = "0123456789";
+  for (i = 0; i < text.value.length; i++) {
+    if (numbers.indexOf(text.value.charAt(i), 0) == -1) {
+      return false;
     }
   }
   return true;
+}
+
+function validateLetter(text) {
+  var letters = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ";
+  for (i = 0; i < text.value.length; i++) {
+    if (letters.indexOf(text.value.charAt(i), 0) == -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function validateAlphaNumeric(text) {
+  var letters =
+    "1234567890abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ";
+  for (i = 0; i < text.value.length; i++) {
+    if (letters.indexOf(text.value.charAt(i), 0) == -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function validateEmail(text) {
+  var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+  if (text.value.match(emailExpression)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validatePassword(text) {
+  if (validateAlphaNumeric(text)) {
+    if (validateLetter(text)) {
+      return false;
+    } else if (validateNumber(text)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  return false;
 }
 
 signInValidation.onclick = function (e) {
@@ -82,7 +112,7 @@ signInValidation.onclick = function (e) {
     validateEmail(email) &&
     lengthPassword(password)
   ) {
-    alert("Valid account!");
+    alert("Valid account");
   } else {
     if ((validateCharCode(password) && lengthPassword(password)) === false) {
       if (lengthCero(password)) {
@@ -90,7 +120,7 @@ signInValidation.onclick = function (e) {
         password.classList.add("fail");
         password.nextElementSibling.innerText = "Complete this field";
       }
-      alert("Invalid password!");
+      alert("Invalid password");
     }
     if (validateEmail(email) === false) {
       if (lengthCero(email)) {
@@ -98,7 +128,7 @@ signInValidation.onclick = function (e) {
         email.classList.add("fail");
         email.nextElementSibling.innerText = "Complete this field";
       }
-      alert("Invalid email!");
+      alert("Invalid email");
     }
   }
 };

@@ -50,10 +50,8 @@ Repository name: "BaSP-M2023"
   https://ticilicarzze.github.io/BaSP-M2023/ 
   (Use this to enter the README file)
   ```
-  ```
-  https://ticilicarzze.github.io/BaSP-M2023/Week-04/ 
-  (Use this to enter Week-04 project)
-  ```
+
+https://ticilicarzze.github.io/BaSP-M2023/Week-04/
 
 ## Week 05
 - Learn the basics of JavaScript
@@ -66,12 +64,16 @@ Repository name: "BaSP-M2023"
 - Solve the problems raised
 - Correct mistakes made in the CSS code last week
 
+https://ticilicarzze.github.io/BaSP-M2023/Week-05/
+
 ## Week 06
 - Learn how to manipulate the DOM with JavaScript
 - Create the Login and Sign-Up of the landing page
 - Validate forms in Login and Sign-Up with JavaScrip and HTML
 - Use CSS to style the pages and for some visual effects in the validation
 - Added href to navigate between the pages
+
+https://ticilicarzze.github.io/BaSP-M2023/Week-06/views/sign-up.html
 
 ## Author
 - Ticiano Licarzze

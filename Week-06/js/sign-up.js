@@ -127,7 +127,7 @@ window.addEventListener("load", function () {
       lastName.classList.add("correct");
     } else {
       lastName.nextElementSibling.classList.add("on");
-      lastName.nextElementSibling.innerText = "Invalid Last Name";
+      lastName.nextElementSibling.innerText = "Must have more than 3 letters";
       lastName.classList.remove("correct");
       lastName.classList.add("fail");
     }
@@ -139,9 +139,8 @@ window.addEventListener("load", function () {
       dni.classList.remove("fail");
       dni.classList.add("correct");
     } else {
-      field[2] = -1;
       dni.nextElementSibling.classList.add("on");
-      dni.nextElementSibling.innerText = "Invalid DNI";
+      dni.nextElementSibling.innerText = "Must have more than 7 numbers";
       dni.classList.remove("correct");
       dni.classList.add("fail");
     }
@@ -171,7 +170,7 @@ window.addEventListener("load", function () {
       phone.classList.add("correct");
     } else {
       phone.nextElementSibling.classList.add("on");
-      phone.nextElementSibling.innerText = "Invalid Phone";
+      phone.nextElementSibling.innerText = "Must have 10 numbers";
       phone.classList.remove("correct");
       phone.classList.add("fail");
     }
@@ -188,7 +187,8 @@ window.addEventListener("load", function () {
       address.classList.add("correct");
     } else {
       address.nextElementSibling.classList.add("on");
-      address.nextElementSibling.innerText = "Invalid Address";
+      address.nextElementSibling.innerText =
+        "Must have more than 5 letters, a blank space and at least one number";
       address.classList.remove("correct");
       address.classList.add("fail");
     }
@@ -201,7 +201,7 @@ window.addEventListener("load", function () {
       location.classList.add("correct");
     } else {
       location.nextElementSibling.classList.add("on");
-      location.nextElementSibling.innerText = "Invalid Location";
+      location.nextElementSibling.innerText = "Must have 3 numbers or letters";
       location.classList.remove("correct");
       location.classList.add("fail");
     }
@@ -218,7 +218,8 @@ window.addEventListener("load", function () {
       postalCode.classList.add("correct");
     } else {
       postalCode.nextElementSibling.classList.add("on");
-      postalCode.nextElementSibling.innerText = "Invalid Postal Code";
+      postalCode.nextElementSibling.innerText =
+        "Must have between 4 and 5 numbers";
       postalCode.classList.remove("correct");
       postalCode.classList.add("fail");
     }
@@ -244,7 +245,8 @@ window.addEventListener("load", function () {
       password.classList.add("correct");
     } else {
       password.nextElementSibling.classList.add("on");
-      password.nextElementSibling.innerText = "Must have 8 numbers or letters";
+      password.nextElementSibling.innerText =
+        "Must have more than 8 numbers or letters";
       password.classList.remove("correct");
       password.classList.add("fail");
     }
@@ -261,7 +263,7 @@ window.addEventListener("load", function () {
       repeatPassword.classList.add("correct");
     } else {
       repeatPassword.nextElementSibling.classList.add("on");
-      repeatPassword.nextElementSibling.innerText = "Incorrect Password";
+      repeatPassword.nextElementSibling.innerText = "Not same Password";
       repeatPassword.classList.remove("correct");
       repeatPassword.classList.add("fail");
     }
@@ -447,8 +449,8 @@ window.addEventListener("load", function () {
         (validateMinLength(8, password) && validatePassword(password)) == false
       ) {
         if (lengthCero(location)) {
-          postalCode.nextElementSibling.classList.add("on");
-          postalCode.nextElementSibling.innerText = "Complete this field";
+          password.nextElementSibling.classList.add("on");
+          password.nextElementSibling.innerText = "Complete this field";
         }
         alert("Invalid Password!");
       }
@@ -461,7 +463,7 @@ window.addEventListener("load", function () {
           repeatPassword.nextElementSibling.classList.add("on");
           repeatPassword.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Wrong Pasword!");
+        alert("Not same Password!");
       }
     }
   };

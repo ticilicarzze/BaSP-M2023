@@ -10,8 +10,7 @@ window.addEventListener("load", function () {
   var email = document.getElementById("input-email");
   var password = document.getElementById("input-password");
   var repeatPassword = document.getElementById("input-repeat-password");
-  var inputG = document.getElementsByTagName("input");
-  var signInValidation = document.querySelector("[name=button-validate]");
+  var signUpValidation = document.querySelector("[name=button-validate]");
 
   function validateNumber(text) {
     var numbers = "0123456789";
@@ -101,11 +100,11 @@ window.addEventListener("load", function () {
     return false;
   }
 
-  function lenghtCero(inputText) {
-    if (inputText.value.length == 0) {
-      return false;
+  function lengthCero(text) {
+    if (text.value.length === 0) {
+      return true;
     }
-    return true;
+    return false;
   }
 
   nameI.onblur = function () {
@@ -113,13 +112,11 @@ window.addEventListener("load", function () {
       nameI.nextElementSibling.classList.remove("on");
       nameI.classList.remove("fail");
       nameI.classList.add("correct");
-      array[0] = 0;
     } else {
       nameI.nextElementSibling.classList.add("on");
       nameI.nextElementSibling.innerText = "Must have more than 3 letters";
       nameI.classList.remove("correct");
       nameI.classList.add("fail");
-      array[0] = "Invalid Name\n";
     }
   };
 
@@ -142,6 +139,7 @@ window.addEventListener("load", function () {
       dni.classList.remove("fail");
       dni.classList.add("correct");
     } else {
+      field[2] = -1;
       dni.nextElementSibling.classList.add("on");
       dni.nextElementSibling.innerText = "Invalid DNI";
       dni.classList.remove("correct");
@@ -150,7 +148,7 @@ window.addEventListener("load", function () {
   };
 
   birthdate.onblur = function () {
-    if (lenghtCero(birthdate)) {
+    if (!lengthCero(birthdate)) {
       birthdate.nextElementSibling.classList.remove("on");
       birthdate.classList.remove("fail");
       birthdate.classList.add("correct");
@@ -163,7 +161,6 @@ window.addEventListener("load", function () {
   };
 
   phone.onblur = function () {
-    console.log("hola");
     if (
       validateNumber(phone) &&
       validateMinLength(10, phone) &&
@@ -335,32 +332,137 @@ window.addEventListener("load", function () {
     repeatPassword.classList.remove("fail");
     repeatPassword.nextElementSibling.classList.remove("on");
   };
+
+  signUpValidation.onclick = function (e) {
+    e.preventDefault();
+    if (
+      validateLetter(nameI) &&
+      validateMinLength(3, nameI) &&
+      validateLetter(lastName) &&
+      validateMinLength(3, lastName) &&
+      validateNumber(dni) &&
+      validateMinLength(8, dni) &&
+      !lengthCero(birthdate) &&
+      validateNumber(phone) &&
+      validateMinLength(10, phone) &&
+      validateMaxLength(10, phone) &&
+      validateAlphaNumeric(address) &&
+      validateMinLength(5, address) &&
+      validateAddress(address) &&
+      validateAlphaNumeric(location) &&
+      validateMinLength(3, location) &&
+      validateNumber(postalCode) &&
+      validateMinLength(4, postalCode) &&
+      validateMaxLength(5, postalCode) &&
+      validateEmail(email) &&
+      validateMinLength(8, password) &&
+      validatePassword(password) &&
+      validateMinLength(8, repeatPassword) &&
+      validateRepeatPassword(password, repeatPassword) &&
+      validatePassword(repeatPassword)
+    ) {
+      alert("Valid account!");
+    } else {
+      if ((validateLetter(nameI) && validateMinLength(3, nameI)) == false) {
+        if (lengthCero(nameI)) {
+          nameI.nextElementSibling.classList.add("on");
+          nameI.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Name!");
+      }
+      if (
+        (validateLetter(lastName) && validateMinLength(3, lastName)) == false
+      ) {
+        if (lengthCero(lastName)) {
+          lastName.nextElementSibling.classList.add("on");
+          lastName.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Last Name!");
+      }
+      if ((validateNumber(dni) && validateMinLength(8, dni)) == false) {
+        if (lengthCero(dni)) {
+          dni.nextElementSibling.classList.add("on");
+          dni.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid DNI!");
+      }
+      if (!lengthCero(birthdate) == false) {
+        if (lengthCero(birthdate)) {
+          birthdate.nextElementSibling.classList.add("on");
+          birthdate.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Birthdate!");
+      }
+      if (
+        (validateNumber(phone) &&
+          validateMinLength(10, phone) &&
+          validateMaxLength(10, phone)) == false
+      ) {
+        if (lengthCero(phone)) {
+          phone.nextElementSibling.classList.add("on");
+          phone.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Phone!");
+      }
+      if (
+        (validateAlphaNumeric(address) &&
+          validateMinLength(5, address) &&
+          validateAddress(address)) == false
+      ) {
+        if (lengthCero(address)) {
+          address.nextElementSibling.classList.add("on");
+          address.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Address!");
+      }
+      if (
+        (validateAlphaNumeric(location) && validateMinLength(3, location)) ==
+        false
+      ) {
+        if (lengthCero(location)) {
+          location.nextElementSibling.classList.add("on");
+          location.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Location!");
+      }
+      if (
+        (validateNumber(postalCode) &&
+          validateMinLength(4, postalCode) &&
+          validateMaxLength(5, postalCode)) == false
+      ) {
+        if (lengthCero(location)) {
+          postalCode.nextElementSibling.classList.add("on");
+          postalCode.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Postal Code!");
+      }
+      if (validateEmail(email) == false) {
+        if (lengthCero(email)) {
+          email.nextElementSibling.classList.add("on");
+          email.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid email!");
+      }
+      if (
+        (validateMinLength(8, password) && validatePassword(password)) == false
+      ) {
+        if (lengthCero(location)) {
+          postalCode.nextElementSibling.classList.add("on");
+          postalCode.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Invalid Password!");
+      }
+      if (
+        (validateMinLength(8, repeatPassword) &&
+          validateRepeatPassword(password, repeatPassword) &&
+          validatePassword(repeatPassword)) == false
+      ) {
+        if (lengthCero(repeatPassword)) {
+          repeatPassword.nextElementSibling.classList.add("on");
+          repeatPassword.nextElementSibling.innerText = "Complete this field";
+        }
+        alert("Wrong Pasword!");
+      }
+    }
+  };
 });
-
-signInValidation.onclick = function (e) {
-  e.preventDefault();
-  var j = 0,
-    w = 0;
-  var array2 = [];
-
-  for (var i = 0; i <= 10; i++) {
-    if (array[i] != 0 && array[i] != 1) {
-      array2[j] = array[i];
-      j++;
-    }
-    if (array[i] == 1) {
-      w++;
-      inputG[i].nextElementSibling.classList.add("on");
-      inputG[i].nextElementSibling.innerText = "Complete this field";
-    }
-  }
-  if (w > 0) {
-    alert("Incompleted fields");
-  }
-
-  if (w == 0 && array2.length == 0) {
-    alert("Account Created");
-  } else {
-    alert(array2);
-  }
-};

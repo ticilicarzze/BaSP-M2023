@@ -108,27 +108,27 @@ function validatePassword(text) {
 signInValidation.onclick = function (e) {
   e.preventDefault();
   if (
-    validateCharCode(password) &&
+    validatePassword(password) &&
     validateEmail(email) &&
-    lengthPassword(password)
+    validateMinLength(8, password)
   ) {
-    alert("Valid account");
+    alert("Valid account!");
   } else {
-    if ((validateCharCode(password) && lengthPassword(password)) === false) {
+    if (
+      (validatePassword(password) && validateMinLength(8, password)) == false
+    ) {
       if (lengthCero(password)) {
         password.nextElementSibling.classList.add("on");
-        password.classList.add("fail");
         password.nextElementSibling.innerText = "Complete this field";
       }
-      alert("Invalid password");
+      alert("Invalid password!");
     }
-    if (validateEmail(email) === false) {
+    if (validateEmail(email) == false) {
       if (lengthCero(email)) {
         email.nextElementSibling.classList.add("on");
-        email.classList.add("fail");
         email.nextElementSibling.innerText = "Complete this field";
       }
-      alert("Invalid email");
+      alert("Invalid email!");
     }
   }
 };

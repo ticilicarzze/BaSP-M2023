@@ -66,6 +66,13 @@ Repository name: "BaSP-M2023"
 - Solve the problems raised
 - Correct mistakes made in the CSS code last week
 
+## Week 06
+- Learn how to manipulate the DOM with JavaScript
+- Create the Login and Sign-Up of the landing page
+- Validate forms in Login and Sign-Up with JavaScrip and HTML
+- Use CSS to style the pages and for some visual effects in the validation
+- Added href to navigate between the pages
+
 ## Author
 - Ticiano Licarzze
 

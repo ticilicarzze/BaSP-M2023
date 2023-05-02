@@ -396,35 +396,64 @@ window.addEventListener("load", function () {
 
   signUpValidation.onclick = function (e) {
     e.preventDefault();
+    var url = `https://api-rest-server.vercel.app/signup?email=${email.value}&password=${password.value}`;
+
+    fetch(url)
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        if (data.success) {
+          return alert(data.msg);
+        }
+        if (data.errors) {
+          for (var i = 0; i < data.errors.length; i++) {
+            throw new Error(data.errors[i].msg);
+          }
+        }
+        throw new Error(data.msg);
+      })
+      .catch(function (err) {
+        alert(err);
+      });
     if (validateAll()) {
-      ("Valid Account");
-      alert(
-        "Valid Account\n" +
-          "name: " +
-          nameI.value +
-          "\nLast Name: " +
-          lastName.value +
-          "\nDNI: " +
-          dni.value +
-          "\nBirth Date: " +
-          birthdate.value +
-          "\nPhone: " +
-          phone.value +
-          "\nAddress: " +
-          address.value +
-          "\nLocation: " +
-          location.value +
-          "\nPost Code: " +
-          postalCode.value +
-          "\nEmail: " +
-          email.value +
-          "\nPassword: " +
-          password.value +
-          "\nRepeat Password: " +
-          repeatPassword.value
-      );
-      fetch;
-      cleanAll();
+      // var nameValue = nameI.value.trim();
+      // var lastNameValue = lastName.value.trim();
+      // var dniValue = dni.value.trim();
+      // var birthdateValue = birthdate.value.trim();
+      // var phoneValue = phone.value.trim();
+      // var addressValue = address.value.trim();
+      // var locationValue = location.value.trim();
+      // var postalCodeValue = postalCode.value.trim();
+      // var emailValue = email.value.trim();
+      // var passwordValue = password.value.trim();
+      // var repeatPasswordValue = repeatPassword.value.trim();
+      // alert(
+      //   "Valid Account\n" +
+      //     "name: " +
+      //     nameValue +
+      //     "\nLast Name: " +
+      //     lastNameValue +
+      //     "\nDNI: " +
+      //     dniValue +
+      //     "\nBirth Date: " +
+      //     birthdateValue +
+      //     "\nPhone: " +
+      //     phoneValue +
+      //     "\nAddress: " +
+      //     addressValue +
+      //     "\nLocation: " +
+      //     locationValue +
+      //     "\nPost Code: " +
+      //     postalCodeValue +
+      //     "\nEmail: " +
+      //     emailValue +
+      //     "\nPassword: " +
+      //     passwordValue +
+      //     "\nRepeat Password: " +
+      //     repeatPasswordValue
+      // );
+      // cleanAll();
     } else {
       if ((validateLetter(nameI) && validateMinLength(3, nameI)) == false) {
         arrayError.push("Invalid Name!\n");
@@ -526,7 +555,7 @@ window.addEventListener("load", function () {
           repeatPassword.nextElementSibling.innerText = "Complete this field";
         }
       }
-      alert(arrayError);
+      // alert(arrayError);
       arrayError = [];
     }
   };

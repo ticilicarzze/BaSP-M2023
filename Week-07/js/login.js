@@ -118,66 +118,54 @@ signInValidation.onclick = function (e) {
     validateEmail(email) &&
     validateMinLength(8, password)
   ) {
-    cleanAll();
     email.classList.remove("correct");
     password.classList.remove("correct");
-    alert("Valid account!");
-  } else {
-    if (
-      (validatePassword(password) && validateMinLength(8, password)) == false
-    ) {
-      if (lengthCero(password)) {
-        password.nextElementSibling.classList.add("on");
-        password.nextElementSibling.innerText = "Complete this field";
-      }
-      arrayError.push("Invalid password!\n");
-    }
-    if (validateEmail(email) == false) {
-      if (lengthCero(email)) {
-        email.nextElementSibling.classList.add("on");
-        email.nextElementSibling.innerText = "Complete this field";
-      }
-      arrayError.push("Invalid email!\n");
-    }
-    alert(arrayError);
-    arrayError = [];
+    // var emailValue = email.value.trim();
+    // var passwordValue = password.value.trim();
+    // alert(
+    //   "Valid account!\n" +
+    //     "email: " +
+    //     emailValue +
+    //     " " +
+    //     "\npassword: " +
+    //     passwordValue
+    // );
+    // cleanAll();
   }
-};
-
-document
-  .getElementById("sign-in-button")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    var emailValue = email.value.trim();
-    var passwordValue = password.value.trim();
-
-    if (validateInformation() == "") {
-      alert("email: " + emailValue + " " + "\npassword: " + passwordValue);
-    } else {
-      alert(validateInformation());
+  if ((validatePassword(password) && validateMinLength(8, password)) == false) {
+    if (lengthCero(password)) {
+      password.nextElementSibling.classList.add("on");
+      password.nextElementSibling.innerText = "Complete this field";
     }
-
-    var url = `https://api-rest-server.vercel.app/login?email=${email.value}&password=${password.value}`;
-
-    fetch(url)
-      .then(function (res) {
-        // if (!res.ok) throw new Error(res);
-        return res;
-      })
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
-        if (data.success) {
-          alert("Login success! Received data: " + JSON.stringify(data));
-          return data;
-        } else {
-          alert("Login failed! Received data: " + JSON.stringify(data));
-          return data;
+    //     arrayError.push("Invalid password!\n");
+  }
+  if (validateEmail(email) == false) {
+    if (lengthCero(email)) {
+      email.nextElementSibling.classList.add("on");
+      email.nextElementSibling.innerText = "Complete this field";
+    }
+    //     arrayError.push("Invalid email!\n");
+    //   }
+    // alert(arrayError);
+    // arrayError = [];
+  }
+  var url = `https://api-rest-server.vercel.app/login?email=${email.value}&password=${password.value}`;
+  fetch(url)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      if (data.success) {
+        return alert(data.msg);
+      }
+      if (data.errors) {
+        for (var i = 0; i < data.errors.length; i++) {
+          throw new Error(data.errors[i].msg);
         }
-      })
-      .catch(function (res) {
-        console.error(res);
-        alert("There is an error, try again: " + JSON.stringify(res));
-      });
-  });
+      }
+      throw new Error(data.msg);
+    })
+    .catch(function (err) {
+      alert(err);
+    });
+};

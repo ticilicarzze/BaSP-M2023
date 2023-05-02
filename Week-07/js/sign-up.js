@@ -11,65 +11,22 @@ window.addEventListener("load", function () {
   var password = document.getElementById("input-password");
   var repeatPassword = document.getElementById("input-repeat-password");
   var signUpValidation = document.querySelector("[name=button-validate]");
-  var arrayError = [];
 
-  function validateAll() {
-    if (
-      validateLetter(nameI) &&
-      validateMinLength(3, nameI) &&
-      validateLetter(lastName) &&
-      validateMinLength(3, lastName) &&
-      validateNumber(dni) &&
-      validateMinLength(8, dni) &&
-      !lengthCero(birthdate) &&
-      validateNumber(phone) &&
-      validateMinLength(10, phone) &&
-      validateMaxLength(10, phone) &&
-      validateAlphaNumeric(address) &&
-      validateMinLength(5, address) &&
-      validateAddress(address) &&
-      validateAlphaNumeric(location) &&
-      validateMinLength(3, location) &&
-      validateNumber(postalCode) &&
-      validateMinLength(4, postalCode) &&
-      validateMaxLength(5, postalCode) &&
-      validateEmail(email) &&
-      validateMinLength(8, password) &&
-      validatePassword(password) &&
-      validateMinLength(8, repeatPassword) &&
-      validateRepeatPassword(password, repeatPassword) &&
-      validatePassword(repeatPassword)
-    ) {
-      return true;
-    }
+  function restoreValues() {
+    nameI.value = localStorage.getItem("name");
+    lastName.value = localStorage.getItem("lastName");
+    dni.value = localStorage.getItem("dni");
+    birthdate.value = localStorage.getItem("dob");
+    phone.value = localStorage.getItem("phone");
+    address.value = localStorage.getItem("address");
+    location.value = localStorage.getItem("city");
+    postalCode.value = localStorage.getItem("zip");
+    email.value = localStorage.getItem("email");
+    password.value = localStorage.getItem("password");
+    repeatPassword.value = localStorage.getItem("password");
   }
 
-  function cleanAll() {
-    nameI.value = "";
-    lastName.value = "";
-    dni.value = "";
-    birthdate.value = "";
-    phone.value = "";
-    address.value = "";
-    location.value = "";
-    postalCode.value = "";
-    email.value = "";
-    password.value = "";
-    repeatPassword.value = "";
-    signUpValidation.value = "";
-    nameI.classList.remove("correct");
-    lastName.classList.remove("correct");
-    dni.classList.remove("correct");
-    birthdate.classList.remove("correct");
-    phone.classList.remove("correct");
-    address.classList.remove("correct");
-    location.classList.remove("correct");
-    postalCode.classList.remove("correct");
-    email.classList.remove("correct");
-    password.classList.remove("correct");
-    repeatPassword.classList.remove("correct");
-    signUpValidation.classList.remove("correct");
-  }
+  restoreValues();
 
   function validateNumber(text) {
     var numbers = "0123456789";
@@ -166,6 +123,15 @@ window.addEventListener("load", function () {
     return false;
   }
 
+  function dateMonthFirst(date) {
+    var dateSplit = date.split("-");
+    var day = dateSplit[2];
+    var month = dateSplit[1];
+    var year = dateSplit[0];
+    var newDate = month + "/" + day + "/" + year;
+    return newDate;
+  }
+
   nameI.onblur = function () {
     if (validateLetter(nameI) && validateMinLength(3, nameI)) {
       nameI.nextElementSibling.classList.remove("on");
@@ -210,6 +176,7 @@ window.addEventListener("load", function () {
       birthdate.nextElementSibling.classList.remove("on");
       birthdate.classList.remove("fail");
       birthdate.classList.add("correct");
+      console.log("DOM " + birthdate.value);
     } else {
       birthdate.nextElementSibling.classList.add("on");
       birthdate.nextElementSibling.innerText = "Add a Birthdate";
@@ -396,7 +363,107 @@ window.addEventListener("load", function () {
 
   signUpValidation.onclick = function (e) {
     e.preventDefault();
-    var url = `https://api-rest-server.vercel.app/signup?email=${email.value}&password=${password.value}`;
+    if ((validateLetter(nameI) && validateMinLength(3, nameI)) == false) {
+      arrayError.push("Invalid Name!\n");
+      if (lengthCero(nameI)) {
+        nameI.nextElementSibling.classList.add("on");
+        nameI.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if ((validateLetter(lastName) && validateMinLength(3, lastName)) == false) {
+      arrayError.push("Invalid Last Name!\n");
+      if (lengthCero(lastName)) {
+        lastName.nextElementSibling.classList.add("on");
+        lastName.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if ((validateNumber(dni) && validateMinLength(8, dni)) == false) {
+      arrayError.push("Invalid DNI!\n");
+      if (lengthCero(dni)) {
+        dni.nextElementSibling.classList.add("on");
+        dni.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (!lengthCero(birthdate) == false) {
+      arrayError.push("Invalid Birthdate!\n");
+      if (lengthCero(birthdate)) {
+        birthdate.nextElementSibling.classList.add("on");
+        birthdate.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (
+      (validateNumber(phone) &&
+        validateMinLength(10, phone) &&
+        validateMaxLength(10, phone)) == false
+    ) {
+      arrayError.push("Invalid Phone!\n");
+      if (lengthCero(phone)) {
+        phone.nextElementSibling.classList.add("on");
+        phone.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (
+      (validateAlphaNumeric(address) &&
+        validateMinLength(5, address) &&
+        validateAddress(address)) == false
+    ) {
+      arrayError.push("Invalid Address!\n");
+      if (lengthCero(address)) {
+        address.nextElementSibling.classList.add("on");
+        address.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (
+      (validateAlphaNumeric(location) && validateMinLength(3, location)) ==
+      false
+    ) {
+      arrayError.push("Invalid Location!\n");
+      if (lengthCero(location)) {
+        location.nextElementSibling.classList.add("on");
+        location.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (
+      (validateNumber(postalCode) &&
+        validateMinLength(4, postalCode) &&
+        validateMaxLength(5, postalCode)) == false
+    ) {
+      arrayError.push("Invalid Postal Code!\n");
+      if (lengthCero(location)) {
+        postalCode.nextElementSibling.classList.add("on");
+        postalCode.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (validateEmail(email) == false) {
+      arrayError.push("Invalid email!\n");
+      if (lengthCero(email)) {
+        email.nextElementSibling.classList.add("on");
+        email.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (
+      (validateMinLength(8, password) && validatePassword(password)) == false
+    ) {
+      arrayError.push("Invalid Password!\n");
+      if (lengthCero(location)) {
+        password.nextElementSibling.classList.add("on");
+        password.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    if (
+      (validateMinLength(8, repeatPassword) &&
+        validateRepeatPassword(password, repeatPassword) &&
+        validatePassword(repeatPassword)) == false
+    ) {
+      arrayError.push("Not same Password!\n");
+      if (lengthCero(repeatPassword)) {
+        repeatPassword.nextElementSibling.classList.add("on");
+        repeatPassword.nextElementSibling.innerText = "Complete this field";
+      }
+    }
+    var dob = dateMonthFirst(birthdate.value);
+    console.log(dob);
+    var url = `https://api-rest-server.vercel.app/signup?name=${nameI.value}&lastName=${lastName.value}&dni=${dni.value}&dob=${dob}&phone=${phone.value}&address=${address.value}&city=${location.value}&zip=${postalCode.value}&password=${password.value}&email=${email.value}`;
 
     fetch(url)
       .then(function (res) {
@@ -404,159 +471,35 @@ window.addEventListener("load", function () {
       })
       .then(function (data) {
         if (data.success) {
+          localStorage.setItem("name", nameI.value);
+          localStorage.setItem("lastName", lastName.value);
+          localStorage.setItem("dni", dni.value);
+          localStorage.setItem("dob", birthdate.value);
+          localStorage.setItem("phone", phone.value);
+          localStorage.setItem("address", address.value);
+          localStorage.setItem("city", location.value);
+          localStorage.setItem("zip", postalCode.value);
+          localStorage.setItem("password", password.value);
+          localStorage.setItem("email", email.value);
           return alert(data.msg);
         }
         if (data.errors) {
+          console.log(lastName.value);
+          var errorsFetch;
           for (var i = 0; i < data.errors.length; i++) {
-            throw new Error(data.errors[i].msg);
+            errorsFetch +=
+              "\n\nThe " +
+              data.errors[i].param +
+              ": " +
+              data.errors[i].value +
+              "\n Has the following error: " +
+              data.errors[i].msg;
           }
         }
-        throw new Error(data.msg);
+        throw new Error(errorsFetch);
       })
       .catch(function (err) {
         alert(err);
       });
-    if (validateAll()) {
-      // var nameValue = nameI.value.trim();
-      // var lastNameValue = lastName.value.trim();
-      // var dniValue = dni.value.trim();
-      // var birthdateValue = birthdate.value.trim();
-      // var phoneValue = phone.value.trim();
-      // var addressValue = address.value.trim();
-      // var locationValue = location.value.trim();
-      // var postalCodeValue = postalCode.value.trim();
-      // var emailValue = email.value.trim();
-      // var passwordValue = password.value.trim();
-      // var repeatPasswordValue = repeatPassword.value.trim();
-      // alert(
-      //   "Valid Account\n" +
-      //     "name: " +
-      //     nameValue +
-      //     "\nLast Name: " +
-      //     lastNameValue +
-      //     "\nDNI: " +
-      //     dniValue +
-      //     "\nBirth Date: " +
-      //     birthdateValue +
-      //     "\nPhone: " +
-      //     phoneValue +
-      //     "\nAddress: " +
-      //     addressValue +
-      //     "\nLocation: " +
-      //     locationValue +
-      //     "\nPost Code: " +
-      //     postalCodeValue +
-      //     "\nEmail: " +
-      //     emailValue +
-      //     "\nPassword: " +
-      //     passwordValue +
-      //     "\nRepeat Password: " +
-      //     repeatPasswordValue
-      // );
-      // cleanAll();
-    } else {
-      if ((validateLetter(nameI) && validateMinLength(3, nameI)) == false) {
-        arrayError.push("Invalid Name!\n");
-        if (lengthCero(nameI)) {
-          nameI.nextElementSibling.classList.add("on");
-          nameI.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (
-        (validateLetter(lastName) && validateMinLength(3, lastName)) == false
-      ) {
-        arrayError.push("Invalid Last Name!\n");
-        if (lengthCero(lastName)) {
-          lastName.nextElementSibling.classList.add("on");
-          lastName.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if ((validateNumber(dni) && validateMinLength(8, dni)) == false) {
-        arrayError.push("Invalid DNI!\n");
-        if (lengthCero(dni)) {
-          dni.nextElementSibling.classList.add("on");
-          dni.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (!lengthCero(birthdate) == false) {
-        arrayError.push("Invalid Birthdate!\n");
-        if (lengthCero(birthdate)) {
-          birthdate.nextElementSibling.classList.add("on");
-          birthdate.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (
-        (validateNumber(phone) &&
-          validateMinLength(10, phone) &&
-          validateMaxLength(10, phone)) == false
-      ) {
-        arrayError.push("Invalid Phone!\n");
-        if (lengthCero(phone)) {
-          phone.nextElementSibling.classList.add("on");
-          phone.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (
-        (validateAlphaNumeric(address) &&
-          validateMinLength(5, address) &&
-          validateAddress(address)) == false
-      ) {
-        arrayError.push("Invalid Address!\n");
-        if (lengthCero(address)) {
-          address.nextElementSibling.classList.add("on");
-          address.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (
-        (validateAlphaNumeric(location) && validateMinLength(3, location)) ==
-        false
-      ) {
-        arrayError.push("Invalid Location!\n");
-        if (lengthCero(location)) {
-          location.nextElementSibling.classList.add("on");
-          location.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (
-        (validateNumber(postalCode) &&
-          validateMinLength(4, postalCode) &&
-          validateMaxLength(5, postalCode)) == false
-      ) {
-        arrayError.push("Invalid Postal Code!\n");
-        if (lengthCero(location)) {
-          postalCode.nextElementSibling.classList.add("on");
-          postalCode.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (validateEmail(email) == false) {
-        arrayError.push("Invalid email!\n");
-        if (lengthCero(email)) {
-          email.nextElementSibling.classList.add("on");
-          email.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (
-        (validateMinLength(8, password) && validatePassword(password)) == false
-      ) {
-        arrayError.push("Invalid Password!\n");
-        if (lengthCero(location)) {
-          password.nextElementSibling.classList.add("on");
-          password.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      if (
-        (validateMinLength(8, repeatPassword) &&
-          validateRepeatPassword(password, repeatPassword) &&
-          validatePassword(repeatPassword)) == false
-      ) {
-        arrayError.push("Not same Password!\n");
-        if (lengthCero(repeatPassword)) {
-          repeatPassword.nextElementSibling.classList.add("on");
-          repeatPassword.nextElementSibling.innerText = "Complete this field";
-        }
-      }
-      // alert(arrayError);
-      arrayError = [];
-    }
   };
 });

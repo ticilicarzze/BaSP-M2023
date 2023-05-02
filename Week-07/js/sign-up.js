@@ -11,6 +11,38 @@ window.addEventListener("load", function () {
   var password = document.getElementById("input-password");
   var repeatPassword = document.getElementById("input-repeat-password");
   var signUpValidation = document.querySelector("[name=button-validate]");
+  var arrayError = [];
+
+  function validateAll() {
+    if (
+      validateLetter(nameI) &&
+      validateMinLength(3, nameI) &&
+      validateLetter(lastName) &&
+      validateMinLength(3, lastName) &&
+      validateNumber(dni) &&
+      validateMinLength(8, dni) &&
+      !lengthCero(birthdate) &&
+      validateNumber(phone) &&
+      validateMinLength(10, phone) &&
+      validateMaxLength(10, phone) &&
+      validateAlphaNumeric(address) &&
+      validateMinLength(5, address) &&
+      validateAddress(address) &&
+      validateAlphaNumeric(location) &&
+      validateMinLength(3, location) &&
+      validateNumber(postalCode) &&
+      validateMinLength(4, postalCode) &&
+      validateMaxLength(5, postalCode) &&
+      validateEmail(email) &&
+      validateMinLength(8, password) &&
+      validatePassword(password) &&
+      validateMinLength(8, repeatPassword) &&
+      validateRepeatPassword(password, repeatPassword) &&
+      validatePassword(repeatPassword)
+    ) {
+      return true;
+    }
+  }
 
   function cleanAll() {
     nameI.value = "";
@@ -364,169 +396,138 @@ window.addEventListener("load", function () {
 
   signUpValidation.onclick = function (e) {
     e.preventDefault();
-    if (
-      validateLetter(nameI) &&
-      validateMinLength(3, nameI) &&
-      validateLetter(lastName) &&
-      validateMinLength(3, lastName) &&
-      validateNumber(dni) &&
-      validateMinLength(8, dni) &&
-      !lengthCero(birthdate) &&
-      validateNumber(phone) &&
-      validateMinLength(10, phone) &&
-      validateMaxLength(10, phone) &&
-      validateAlphaNumeric(address) &&
-      validateMinLength(5, address) &&
-      validateAddress(address) &&
-      validateAlphaNumeric(location) &&
-      validateMinLength(3, location) &&
-      validateNumber(postalCode) &&
-      validateMinLength(4, postalCode) &&
-      validateMaxLength(5, postalCode) &&
-      validateEmail(email) &&
-      validateMinLength(8, password) &&
-      validatePassword(password) &&
-      validateMinLength(8, repeatPassword) &&
-      validateRepeatPassword(password, repeatPassword) &&
-      validatePassword(repeatPassword)
-    ) {
-      cleanAll();
-
+    if (validateAll()) {
+      ("Valid Account");
       alert(
-        "name: " +
+        "Valid Account\n" +
+          "name: " +
           nameI.value +
-          " " +
           "\nLast Name: " +
           lastName.value +
-          " " +
           "\nDNI: " +
           dni.value +
-          " " +
           "\nBirth Date: " +
           birthdate.value +
-          " " +
           "\nPhone: " +
           phone.value +
-          " " +
           "\nAddress: " +
           address.value +
-          " " +
           "\nLocation: " +
           location.value +
-          " " +
           "\nPost Code: " +
           postalCode.value +
-          " " +
           "\nEmail: " +
           email.value +
-          " " +
           "\nPassword: " +
           password.value +
-          " " +
           "\nRepeat Password: " +
           repeatPassword.value
       );
+      fetch;
+      cleanAll();
     } else {
       if ((validateLetter(nameI) && validateMinLength(3, nameI)) == false) {
+        arrayError.push("Invalid Name!\n");
         if (lengthCero(nameI)) {
           nameI.nextElementSibling.classList.add("on");
           nameI.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Name!");
       }
       if (
         (validateLetter(lastName) && validateMinLength(3, lastName)) == false
       ) {
+        arrayError.push("Invalid Last Name!\n");
         if (lengthCero(lastName)) {
           lastName.nextElementSibling.classList.add("on");
           lastName.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Last Name!");
       }
       if ((validateNumber(dni) && validateMinLength(8, dni)) == false) {
+        arrayError.push("Invalid DNI!\n");
         if (lengthCero(dni)) {
           dni.nextElementSibling.classList.add("on");
           dni.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid DNI!");
       }
       if (!lengthCero(birthdate) == false) {
+        arrayError.push("Invalid Birthdate!\n");
         if (lengthCero(birthdate)) {
           birthdate.nextElementSibling.classList.add("on");
           birthdate.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Birthdate!");
       }
       if (
         (validateNumber(phone) &&
           validateMinLength(10, phone) &&
           validateMaxLength(10, phone)) == false
       ) {
+        arrayError.push("Invalid Phone!\n");
         if (lengthCero(phone)) {
           phone.nextElementSibling.classList.add("on");
           phone.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Phone!");
       }
       if (
         (validateAlphaNumeric(address) &&
           validateMinLength(5, address) &&
           validateAddress(address)) == false
       ) {
+        arrayError.push("Invalid Address!\n");
         if (lengthCero(address)) {
           address.nextElementSibling.classList.add("on");
           address.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Address!");
       }
       if (
         (validateAlphaNumeric(location) && validateMinLength(3, location)) ==
         false
       ) {
+        arrayError.push("Invalid Location!\n");
         if (lengthCero(location)) {
           location.nextElementSibling.classList.add("on");
           location.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Location!");
       }
       if (
         (validateNumber(postalCode) &&
           validateMinLength(4, postalCode) &&
           validateMaxLength(5, postalCode)) == false
       ) {
+        arrayError.push("Invalid Postal Code!\n");
         if (lengthCero(location)) {
           postalCode.nextElementSibling.classList.add("on");
           postalCode.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Postal Code!");
       }
       if (validateEmail(email) == false) {
+        arrayError.push("Invalid email!\n");
         if (lengthCero(email)) {
           email.nextElementSibling.classList.add("on");
           email.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid email!");
       }
       if (
         (validateMinLength(8, password) && validatePassword(password)) == false
       ) {
+        arrayError.push("Invalid Password!\n");
         if (lengthCero(location)) {
           password.nextElementSibling.classList.add("on");
           password.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Invalid Password!");
       }
       if (
         (validateMinLength(8, repeatPassword) &&
           validateRepeatPassword(password, repeatPassword) &&
           validatePassword(repeatPassword)) == false
       ) {
+        arrayError.push("Not same Password!\n");
         if (lengthCero(repeatPassword)) {
           repeatPassword.nextElementSibling.classList.add("on");
           repeatPassword.nextElementSibling.innerText = "Complete this field";
         }
-        alert("Not same Password!");
       }
+      alert(arrayError);
+      arrayError = [];
     }
   };
 });

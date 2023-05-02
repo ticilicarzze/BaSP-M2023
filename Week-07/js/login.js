@@ -1,6 +1,7 @@
 var email = document.getElementById("input-email");
 var password = document.getElementById("input-password");
 var signInValidation = document.querySelector("[name=button-validate]");
+var arrayError = [];
 
 password.onblur = function () {
   if (validateMinLength(8, password) && validatePassword(password)) {
@@ -129,14 +130,54 @@ signInValidation.onclick = function (e) {
         password.nextElementSibling.classList.add("on");
         password.nextElementSibling.innerText = "Complete this field";
       }
-      alert("Invalid password!");
+      arrayError.push("Invalid password!\n");
     }
     if (validateEmail(email) == false) {
       if (lengthCero(email)) {
         email.nextElementSibling.classList.add("on");
         email.nextElementSibling.innerText = "Complete this field";
       }
-      alert("Invalid email!");
+      arrayError.push("Invalid email!\n");
     }
+    alert(arrayError);
+    arrayError = [];
   }
 };
+
+document
+  .getElementById("sign-in-button")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    var emailValue = email.value.trim();
+    var passwordValue = password.value.trim();
+
+    if (validateInformation() == "") {
+      alert("email: " + emailValue + " " + "\npassword: " + passwordValue);
+    } else {
+      alert(validateInformation());
+    }
+
+    var url = `https://api-rest-server.vercel.app/login?email=${email.value}&password=${password.value}`;
+
+    fetch(url)
+      .then(function (res) {
+        // if (!res.ok) throw new Error(res);
+        return res;
+      })
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        if (data.success) {
+          alert("Login success! Received data: " + JSON.stringify(data));
+          return data;
+        } else {
+          alert("Login failed! Received data: " + JSON.stringify(data));
+          return data;
+        }
+      })
+      .catch(function (res) {
+        console.error(res);
+        alert("There is an error, try again: " + JSON.stringify(res));
+      });
+  });

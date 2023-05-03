@@ -78,8 +78,19 @@ https://ticilicarzze.github.io/BaSP-M2023/Week-06/views/sign-up.html
 
 ## Week 07
 - Learn about APIs
+- Learn about promises
+- Use of the Fetch metod
+- Use the API to validate the data send as "Query Params"
+- Used localStorage to refresh the page and keep having the information
+  
+APIs Used: 
+
+Login: https://api-rest-server.vercel.app/login
+
+Signup: https://api-rest-server.vercel.app/signup
 
 
+https://ticilicarzze.github.io/BaSP-M2023/Week-07/views/sign-up.html
 ## Author
 - Ticiano Licarzze
 

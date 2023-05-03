@@ -11,6 +11,7 @@ window.addEventListener("load", function () {
   var password = document.getElementById("input-password");
   var repeatPassword = document.getElementById("input-repeat-password");
   var signUpValidation = document.querySelector("[name=button-validate]");
+  var arrayError = [];
 
   function restoreValues() {
     nameI.value = localStorage.getItem("name");
@@ -481,6 +482,7 @@ window.addEventListener("load", function () {
           localStorage.setItem("zip", postalCode.value);
           localStorage.setItem("password", password.value);
           localStorage.setItem("email", email.value);
+          console.log(data.msg);
           return alert(data.msg);
         }
         if (data.errors) {

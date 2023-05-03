@@ -75,6 +75,11 @@ https://ticilicarzze.github.io/BaSP-M2023/Week-05/
 
 https://ticilicarzze.github.io/BaSP-M2023/Week-06/views/sign-up.html
 
+
+## Week 07
+- Learn about APIs
+
+
 ## Author
 - Ticiano Licarzze
 
